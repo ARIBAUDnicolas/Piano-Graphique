@@ -16,29 +16,29 @@ class Tableau1 extends Phaser.Scene {
             this.load.image('vill'+i, 'assets/vill'+i+'.png');
         }
         /** sons **/
-        this.load.audio('barrack','sons/barrack.MP3');
-        this.load.audio('castle','sons/castle.MP3');
-        this.load.audio('church','sons/church.MP3');
-        this.load.audio('house','sons/house.MP3');
-        this.load.audio('lcamp','sons/lcamp.MP3');
-        this.load.audio('mcamp','sons/mcamp.MP3');
-        this.load.audio('mill','sons/mill.MP3');
-        this.load.audio('forge','sons/forge.MP3');
-        this.load.audio('market','sons/market.MP3');
-        this.load.audio('range','sons/range.MP3');
-        this.load.audio('siegews','sons/siegews.MP3');
-        this.load.audio('stable','sons/stable.MP3');
-        this.load.audio('tower','sons/tower.MP3');
-        this.load.audio('university','sons/university.MP3');
-        this.load.audio('cav','sons/cav.MP3');
-        this.load.audio('recruit','sons/recruit.MP3');
-        this.load.audio('archer','sons/archer.MP3');
-        this.load.audio('wololo','sons/wololo.MP3');
-        this.load.audio('attacks','sons/attacks.MP3');
-        this.load.audio('onjoue','sons/onjoue.MP3');
-        this.load.audio('shoot','sons/shoot.MP3');
-        this.load.audio('lamerveille','sons/lamerveille.MP3');
-        this.load.audio('creervill','sons/creervill.MP3');
+        this.load.audio('barrack','sons/barrack.mp3');
+        this.load.audio('castle','sons/castle.mp3');
+        this.load.audio('church','sons/church.mp3');
+        this.load.audio('house','sons/house.mp3');
+        this.load.audio('lcamp','sons/lcamp.mp3');
+        this.load.audio('mcamp','sons/mcamp.mp3');
+        this.load.audio('mill','sons/mill.mp3');
+        this.load.audio('forge','sons/forge.mp3');
+        this.load.audio('market','sons/market.mp3');
+        this.load.audio('range','sons/range.mp3');
+        this.load.audio('siegews','sons/siegews.mp3');
+        this.load.audio('stable','sons/stable.mp3');
+        this.load.audio('tower','sons/tower.mp3');
+        this.load.audio('university','sons/university.mp3');
+        this.load.audio('cav','sons/cav.mp3');
+        this.load.audio('recruit','sons/recruit.mp3');
+        this.load.audio('archer','sons/archer.mp3');
+        this.load.audio('wololo','sons/wololo.mp3');
+        this.load.audio('attacks','sons/attacks.mp3');
+        this.load.audio('onjoue','sons/onjoue.mp3');
+        this.load.audio('shoot','sons/shoot.mp3');
+        this.load.audio('lamerveille','sons/lamerveille.mp3');
+        this.load.audio('creervill','sons/creervill.mp3');
     }
     create() {
         /**  Les SONS  **/
