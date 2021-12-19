@@ -12,6 +12,9 @@ class Tableau1 extends Phaser.Scene {
         for(let i=1;i<=17;i++){
             this.load.image('bat'+i, 'assets/ ('+i+').png');
         }
+        for(let i=1;i<=3;i++){
+            this.load.image('vill'+i, 'assets/vill'+i+'.png');
+        }
         /** sons **/
         this.load.audio('barrack','sons/barrack.MP3');
         this.load.audio('castle','sons/castle.MP3');
@@ -30,6 +33,12 @@ class Tableau1 extends Phaser.Scene {
         this.load.audio('cav','sons/cav.MP3');
         this.load.audio('recruit','sons/recruit.MP3');
         this.load.audio('archer','sons/archer.MP3');
+        this.load.audio('wololo','sons/wololo.MP3');
+        this.load.audio('attacks','sons/attacks.MP3');
+        this.load.audio('onjoue','sons/onjoue.MP3');
+        this.load.audio('shoot','sons/shoot.MP3');
+        this.load.audio('lamerveille','sons/lamerveille.MP3');
+        this.load.audio('creervill','sons/creervill.MP3');
     }
     create() {
         /**  Les SONS  **/
@@ -50,6 +59,12 @@ class Tableau1 extends Phaser.Scene {
         this.cavsound = this.sound.add('cav');
         this.recruit = this.sound.add('recruit');
         this.archer = this.sound.add('archer');
+        this.wololo = this.sound.add('wololo');
+        this.attacks = this.sound.add('attacks');
+        this.onjoue = this.sound.add('onjoue');
+        this.shoot = this.sound.add('shoot');
+        this.lamerveille = this.sound.add('lamerveille');
+        this.creervill = this.sound.add('creervill');
 
 
         /**  Les BATIMENTS  **/
@@ -58,9 +73,7 @@ class Tableau1 extends Phaser.Scene {
 
         this.appears = this.add.container(0, 0);
 
-        /**  BAT  **/
-        this.bat1= this.add.image(1450, 415, 'bat1').setOrigin(0, 0);
-        this.bat1.visible = false
+
 
         /**  BAT  **/
         this.bat2= this.add.image(650, -70, 'bat2').setOrigin(0, 0);
@@ -106,9 +119,17 @@ class Tableau1 extends Phaser.Scene {
         this.bat12= this.add.image(1250, 620, 'bat12').setOrigin(0, 0);
         this.bat12.visible = false
 
-        /**  BAT  **/
+        /**  soldat  **/
         this.cav= this.add.image(1280, 775, 'cav').setOrigin(0, 0);
         this.cav.visible = false
+
+        /**  BAT  **/
+        this.bat15= this.add.image(1250, 230, 'bat15').setOrigin(0, 0);
+        this.bat15.visible = false
+
+        /**  BAT  **/
+        this.bat1= this.add.image(1450, 415, 'bat1').setOrigin(0, 0);
+        this.bat1.visible = false
 
         /**  BAT  **/
         this.bat13= this.add.image(1680, 545, 'bat13').setOrigin(0, 0);
@@ -119,14 +140,10 @@ class Tableau1 extends Phaser.Scene {
         this.bat14.visible = false
 
         /**  BAT  **/
-        this.bat15= this.add.image(1250, 230, 'bat15').setOrigin(0, 0);
-        this.bat15.visible = false
-
-        /**  BAT  **/
         this.bat16= this.add.image(920, 400, 'bat16').setOrigin(0, 0);
         this.bat16.visible = false
 
-        /**  BAT  **/
+        /**  soldat  **/
         this.bow= this.add.image(980, 605, 'bow').setOrigin(0, 0);
         this.bow.visible = false
 
@@ -134,11 +151,17 @@ class Tableau1 extends Phaser.Scene {
         this.bat17= this.add.image(600, 375, 'bat17').setOrigin(0, 0);
         this.bat17.visible = false
 
-        /**  BAT  **/
+        /**  soldat  **/
         this.fant= this.add.image(780, 605, 'fant').setOrigin(0, 0);
         this.fant.visible = false
 
-
+        /**  vill  **/
+        this.vill1= this.add.image(380, 505, 'vill1').setOrigin(0, 0);
+        this.vill1.visible = false
+        this.vill2= this.add.image(750, 265, 'vill2').setOrigin(0, 0);
+        this.vill2.visible = false
+        this.vill3= this.add.image(1280, 105, 'vill3').setOrigin(0, 0);
+        this.vill3.visible = false
 
 
         this.initKeyboard();
@@ -215,6 +238,41 @@ class Tableau1 extends Phaser.Scene {
                     me.bat17.visible = true;
                     me.barrack.play();
                     break;
+                case Phaser.Input.Keyboard.KeyCodes.K:
+                    me.bat1.visible = true;
+                    me.bat2.visible = true;
+                    me.bat3.visible = true;
+                    me.bat4.visible = true;
+                    me.bat5.visible = true;
+                    me.bat6.visible = true;
+                    me.bat7.visible = true;
+                    me.bat8.visible = true;
+                    me.bat9.visible = true;
+                    me.bat10.visible = true;
+                    me.bat11.visible = true;
+                    me.bat12.visible = true;
+                    me.bat13.visible = true;
+                    me.bat14.visible = true;
+                    me.bat15.visible = true;
+                    me.bat16.visible = true;
+                    me.bat17.visible = true;
+                    me.onjoue.play();
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.L:
+                    me.cav.visible = false;
+                    me.bow.visible = false;
+                    me.fant.visible = false;
+                    me.vill1.visible = false;
+                    me.vill2.visible = false;
+                    me.vill3.visible = false;
+                    me.wololo.play();
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.M:
+                    me.bat2.visible = false;
+                    me.bat13.visible = false;
+                    me.bat14.visible = false;
+                    me.attacks.play();
+                    break;
                 case Phaser.Input.Keyboard.KeyCodes.W:
                     me.cav.visible = true;
                     me.cavsound.play();
@@ -227,7 +285,58 @@ class Tableau1 extends Phaser.Scene {
                     me.bow.visible = true;
                     me.archer.play();
                     break;
-
+                case Phaser.Input.Keyboard.KeyCodes.V:
+                    me.bat1.visible = false;
+                    me.bat2.visible = false;
+                    me.bat3.visible = false;
+                    me.bat4.visible = false;
+                    me.bat5.visible = false;
+                    me.bat6.visible = false;
+                    me.bat7.visible = false;
+                    me.bat8.visible = false;
+                    me.bat9.visible = false;
+                    me.bat10.visible = false;
+                    me.bat11.visible = false;
+                    me.bat12.visible = false;
+                    me.bat13.visible = false;
+                    me.bat14.visible = false;
+                    me.bat15.visible = false;
+                    me.bat16.visible = false;
+                    me.bat17.visible = false;
+                    me.shoot.play();
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.B:
+                    me.bow.visible = false;
+                    me.cav.visible = false;
+                    me.fant.visible = false;
+                    me.vill1.visible = false;
+                    me.vill2.visible = false;
+                    me.vill3.visible = false;
+                    me.bat1.visible = false;
+                    me.bat2.visible = false;
+                    me.bat3.visible = false;
+                    me.bat4.visible = false;
+                    me.bat5.visible = false;
+                    me.bat6.visible = false;
+                    me.bat7.visible = false;
+                    me.bat8.visible = false;
+                    me.bat9.visible = false;
+                    me.bat10.visible = false;
+                    me.bat11.visible = false;
+                    me.bat12.visible = false;
+                    me.bat13.visible = false;
+                    me.bat14.visible = false;
+                    me.bat15.visible = false;
+                    me.bat16.visible = false;
+                    me.bat17.visible = false;
+                    me.lamerveille.play();
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.N:
+                    me.vill1.visible = true;
+                    me.vill2.visible = true;
+                    me.vill3.visible = true;
+                    me.creervill.play();
+                    break;
             }
         })
     }
